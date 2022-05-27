@@ -21,6 +21,7 @@ export class CoffeesController {
   @Public()
   @Get()
   findAll(@Query() paginationQuery: PaginationQueryDto) {
+    // await new Promise((resolve) => setTimeout(resolve, 5000)); To make the call fail so the interceptor can be tested
     return this.coffeService.findAll(paginationQuery);
   }
 
